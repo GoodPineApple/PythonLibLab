@@ -1,6 +1,8 @@
 # https://beomi.github.io/2017/01/20/HowToMakeWebCrawler/
 import requests
 from bs4 import BeautifulSoup
+import os
+import json
 
 # HTTP GEt Request
 req = requests.get('https://beomi.github.io/beomi.github.io_old/')
@@ -27,11 +29,15 @@ my_titles = soup.select(
     'h3 > a'
 )
 
+# python파일의 위치
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# data 딕셔너리 생성
 data = {}
 
 for title in my_titles:
     data[title.text] = title.get('href')
 
+# python파일의 위치에 결과 json파일을 저장
 with open(os.path.join(BASE_DIR, 'result.json'), 'w+') as json_file:
     json.dump(data, json_file)
 
