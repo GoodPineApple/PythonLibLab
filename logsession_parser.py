@@ -34,8 +34,10 @@ with requests.Session() as s:
     post_one = s.get('https://www.clien.net/service/board/rule/10707408')
     soup = bs(post_one.text, 'html.parser') # Soup으로 만들어 줍시다.
     # 아래 CSS Selector는 공지글 제목을 콕 하고 집어줍니다.
-    title = soup.select('#div_content > div.post-title > div.title-subject > div')
-    contents = soup.select('#div_content > div.post.box > div.post-content > div.post-article.fr-view')
+
+    title = soup.select('#div_content > div.post-title > h3')
+    contents = soup.select('#div_content > div.post.box > div.post-content > article > div')
+    
     # HTML을 제대로 파싱한 뒤에는 .text속성을 이용합니다.
     print(title[0].text) # 글제목의 문자만을 가져와봅시다.
     # [0]을 하는 이유는 select로 하나만 가져와도 title자체는 리스트이기 때문입니다.

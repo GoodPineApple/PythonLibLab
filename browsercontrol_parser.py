@@ -1,20 +1,18 @@
 # https://beomi.github.io/2017/02/27/HowToMakeWebCrawler-With-Selenium/
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup
 
-# driver = webdriver.Chrome('D:\taemin\dev\python\croller\chapter01\chromedriver_win32\chromedriver')
-driver = webdriver.Chrome('D:/taemin/dev/python/croller/chapter01/chromedriver_win32/chromedriver')
-driver = webdriver.PhantomJS('D:/taemin/dev/python/croller/chapter01/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs')
+# “Chrome is being controlled by automated test software” notification hide.
+chrome_options = Options()
+chrome_options.add_argument("--disable-infobars")
+driver = webdriver.Chrome('D:/taemin/dev/python/croller/chapter01/chromedriver_win32/chromedriver', chrome_options=chrome_options)
 
 driver.implicitly_wait(3)
 # url에 접근한다.
 driver.get('https://nid.naver.com/nidlogin.login')
 
-driver.find_element_by_name('id').send_keys('naver_id')
-driver.find_element_by_name('pw').send_keys('mypassword1234')
-test = driver.find_element_by_id('label_login_chk').text()
-print(test)
 # PhantomJS 자체적으로 soup역할을 할 수도 있음.
-
 # 페이지의 단일 element에 접근하는 api,
 # find_element_by_name(‘HTML_name’)
 # find_element_by_id(‘HTML_id’)
@@ -24,3 +22,16 @@ print(test)
 # find_element_by_class_name(‘some_class_name’)
 # find_element_by_tag_name(‘h1’)
 
+driver.find_element_by_name('id').send_keys('taemin3000')
+driver.find_element_by_name('pw').send_keys('s8549717')
+
+# 로그인 버튼을 눌러주자.
+driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
+
+# Naver 페이 들어가기
+driver.get('http://taemin3000.blog.me/')
+html = driver.page_source
+soup = BeautifulSoup(html, 'html.parser')
+notices = soup.select('title_1 > span.pcol1.itemSubjectBoldfont')
+
+print(notices[0].text)
