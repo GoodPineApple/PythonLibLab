@@ -37,7 +37,7 @@ with requests.Session() as s:
 
     title = soup.select('#div_content > div.post-title > h3')
     contents = soup.select('#div_content > div.post.box > div.post-content > article > div')
-    
+
     # HTML을 제대로 파싱한 뒤에는 .text속성을 이용합니다.
     print(title[0].text) # 글제목의 문자만을 가져와봅시다.
     # [0]을 하는 이유는 select로 하나만 가져와도 title자체는 리스트이기 때문입니다.

@@ -28,10 +28,15 @@ driver.find_element_by_name('pw').send_keys('s8549717')
 # 로그인 버튼을 눌러주자.
 driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
-# Naver 페이 들어가기
+# 내 블로그 들어가기
 driver.get('http://taemin3000.blog.me/')
 html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser')
-notices = soup.select('title_1 > span.pcol1.itemSubjectBoldfont')
+notices = soup.select('#title_1')
+title = soup.select('title')
 
+print(title)
+print(title[0].text)
+# print(soup)
+# print(notices)
 print(notices[0].text)
