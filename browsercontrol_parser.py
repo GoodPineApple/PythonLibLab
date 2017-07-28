@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 chrome_options = Options()
 chrome_options.add_argument("--disable-infobars")
 driver = webdriver.Chrome('D:/taemin/dev/python/croller/chapter01/chromedriver_win32/chromedriver', chrome_options=chrome_options)
+# driver = webdriver.PhantomJS('D:/taemin/dev/python/croller/chapter01/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs')
 
 driver.implicitly_wait(3)
 # url에 접근한다.
