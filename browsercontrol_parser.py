@@ -31,12 +31,14 @@ driver.implicitly_wait(3)
 
 # 내 블로그 들어가기
 driver.get('http://taemin3000.blog.me/')
+driver.implicitly_wait(3)
 html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser')
 notices = soup.select('#title_1')
 title = soup.select('title')
-fraeset = soup.select('#mainFrame')
+fraeset = soup.select('screenFrame')
 
+print(html)
 print(fraeset)
 # print(title)
 # print(title[0].text)
