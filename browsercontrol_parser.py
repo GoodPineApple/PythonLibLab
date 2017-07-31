@@ -34,7 +34,7 @@ driver.get('http://comic.naver.com/webtoon/weekday.nhn')
 driver.implicitly_wait(3)
 html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser')
-notices = soup.select('#content > div.list_area.daily_all')
+notices = soup.select('#content > div.list_area.daily_all > div:nth-child(3)')
 # title = soup.select('title')
 # fraeset = soup.select('screenFrame')
 
