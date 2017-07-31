@@ -11,7 +11,7 @@ driver = webdriver.PhantomJS('D:/taemin/dev/python/croller/chapter01/phantomjs-2
 
 driver.implicitly_wait(3)
 # url에 접근한다.
-driver.get('https://nid.naver.com/nidlogin.login')
+# driver.get('https://nid.naver.com/nidlogin.login')
 
 # PhantomJS 자체적으로 soup역할을 할 수도 있음.
 # 페이지의 단일 element에 접근하는 api,
@@ -23,11 +23,11 @@ driver.get('https://nid.naver.com/nidlogin.login')
 # find_element_by_class_name(‘some_class_name’)
 # find_element_by_tag_name(‘h1’)
 
-driver.find_element_by_name('id').send_keys('taemin3000')
-driver.find_element_by_name('pw').send_keys('s8549717')
+# driver.find_element_by_name('id').send_keys('taemin3000')
+# driver.find_element_by_name('pw').send_keys('s8549717')
 
 # 로그인 버튼을 눌러주자.
-driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
+# driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
 # 내 블로그 들어가기
 driver.get('http://taemin3000.blog.me/')
