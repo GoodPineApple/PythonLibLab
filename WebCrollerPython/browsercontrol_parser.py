@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 # chrome_options.add_argument("--disable-infobars")
 # driver = webdriver.Chrome('D:/taemin/dev/python/croller/chapter01/chromedriver_win32/chromedriver', chrome_options=chrome_options)
 driver = webdriver.PhantomJS('D:/taemin/dev/python/testDic/WebCrollerPython/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs.exe')
-
 driver.implicitly_wait(3)
 # url에 접근한다.
 # driver.get('https://nid.naver.com/nidlogin.login')
