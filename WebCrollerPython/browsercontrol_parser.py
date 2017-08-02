@@ -29,7 +29,7 @@ driver.implicitly_wait(3)
 # driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
 
 # 내 블로그 들어가기
-driver.get('http://page.kakao.com/main?categoryUid=10&subCategoryUid=1000&navi=1&inkatalk=0&inChannel=0')
+driver.get('http://taemin3000.blog.me/')
 driver.implicitly_wait(3)
 html = driver.page_source
 print(html)
