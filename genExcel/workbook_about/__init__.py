@@ -2,7 +2,7 @@
 # http://xlsxwriter.readthedocs.io/workbook.html
 import xlsxwriter
 # xml파일 workbook 생성
-workbook  = xlsxwriter.Workbook('filename.xlsx')
+workbook = xlsxwriter.Workbook('filename.xlsx')
 
 # sheet 추가
 worksheet0 = workbook.add_worksheet()
