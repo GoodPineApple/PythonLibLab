@@ -8,7 +8,7 @@ logger = logging.getLogger('mylogger')
 fomatter = logging.Formatter('[%(levelname)s|%(filename)s:%(lineno)s] %(asctime)s > %(message)s')
 
 # 스트림과 파일로 로그를 출력하는 핸들러를 각각 만든다.
-fileHandler = logging.FileHandler('./../myLoggerFomatterTest.log')
+fileHandler = logging.FileHandler('/myLoggerFomatterTest.log')
 streamHandler = logging.StreamHandler()
 
 # 각 핸들러에 포매터를 지정한다.
