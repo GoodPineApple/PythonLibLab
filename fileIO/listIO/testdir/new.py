@@ -8,12 +8,12 @@ list = [['조석', '마음의소리', '에피소드', 'null', 'null', 'http://co
                           ['하이햇', '트리거', '미스터리', '', '달콤하고도 잔혹한 미궁 속에 갇힌 그들의 이야기 [로맨스 미스터리 스릴러]','http://webtoon.daum.net/webtoon/view/16909', '완결', '', '20170606', 10.0, '','http://t1.daumcdn.net/cartoon/3380a5999c0aa34f2a8b190697501dee9480f4bc']]
 
 # read 참고
-fw = open('../datas/list.json', 'w')
+fw = open('../../datas/list.json', 'w')
 simplejson.dump(list,fw)
 fw.close()
 
 # 'r'은 파일 내의 내용을 읽어온다.
 # 상대경로로 대상파일을 설정
-with open("../datas/list.json") as f:
+with open("../../datas/list.json") as f:
   filecontents = simplejson.load(f)
 print(filecontents)
