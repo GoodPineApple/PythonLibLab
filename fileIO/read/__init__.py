@@ -7,6 +7,7 @@ fw.write('I like bacon\n')
 fw.close()
 
 # 'r'은 파일 내의 내용을 읽어온다.
+# 상대경로로 대상파일을 설정
 fr = open('../datas/sample.txt', 'r')
 text = fr.read()
 print(text)
